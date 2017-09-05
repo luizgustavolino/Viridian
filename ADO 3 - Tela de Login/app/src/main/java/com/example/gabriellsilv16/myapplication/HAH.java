@@ -25,7 +25,7 @@ public class HAH extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Aqui é bodybuilder, porra!", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Esqueci minha senha", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
