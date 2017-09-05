@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">App do Lins</string>
+    <string name="app_name">ADO 03 - Login</string>
     <string name="action_settings">Tem nada aqui não!</string>
     <string name="login_button">Entrar</string>
 </resources>
