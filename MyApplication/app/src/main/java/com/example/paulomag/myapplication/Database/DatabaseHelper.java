@@ -36,15 +36,18 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         values.put("username",user.getUsername());
         values.put("password",user.getPassword());
 
-        db.insert("banco", null, values);
+        db.insert("login", null, values);
         db.close();
     }
 
-    public boolean userExists(String user, String password){
+    public boolean userExists(User usr){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query("banco", new String[]{"username","password"}, "username=? AND password=?",
+        String user = usr.getUsername();
+        String password = usr.getPassword();
+
+        Cursor cursor = db.query("login", new String[]{"username","password"}, "username=? AND password=?",
                 new String[]{user,password},null,null,null);
-        if(cursor!=null){
+        if(cursor.getCount() > 0){
             return true;
         }
         return false;

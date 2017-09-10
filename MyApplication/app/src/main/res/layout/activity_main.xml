@@ -21,11 +21,11 @@
     </android.support.design.widget.AppBarLayout>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnSignup"
         android:layout_width="145dp"
         android:layout_height="wrap_content"
         android:layout_gravity="top|left"
-        android:text="Cadastre-se"
+        android:text="@string/signupbtn"
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="bottom|right" />
 

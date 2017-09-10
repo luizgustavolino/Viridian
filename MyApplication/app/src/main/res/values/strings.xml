@@ -1,4 +1,12 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">ADO 4 - Login DB</string>
+
+    <string name="login">Entrar</string>
+    <string name="logintitle">Login</string>
+
+    <string name="signupbtn">Cadastre-se</string>
+    <string name="username">Nome de Usuário</string>
+    <string name="password">Senha</string>
+    <string name="passwordConfirm">Senha</string>
+    <string name="signupfinish">Cadastrar</string>
 </resources>

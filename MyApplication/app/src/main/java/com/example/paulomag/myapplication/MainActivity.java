@@ -2,6 +2,7 @@ package com.example.paulomag.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +11,9 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.example.paulomag.myapplication.Classes.User;
 import com.example.paulomag.myapplication.Database.DatabaseHelper;
 
 import static com.example.paulomag.myapplication.R.layout.activity_register;
@@ -28,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-        Button signup = (Button) findViewById(R.id.button2);
+        Button signup = (Button) findViewById(R.id.btnSignup);
         signup.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -36,14 +39,37 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(x);
             }
         });
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
+
+        Button signin = (Button) findViewById(R.id.btnLogin);
+        signin.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+
+                TextView user = (TextView) findViewById(R.id.username);
+                TextView password = (TextView) findViewById(R.id.password);
+
+                if(!user.getText().toString().equals("") && !password.getText().toString().equals("")) {
+                    User login = new User(user.getText().toString(), password.getText().toString());
+
+                    DatabaseHelper dh = new DatabaseHelper(MainActivity.this);
+
+                    if (dh.userExists(login)) {
+
+                        Snackbar.make(view, "Você entrou como " + user.getText().toString() + ".",
+                                Snackbar.LENGTH_LONG).show();
+
+                        Intent intnt = new Intent(getApplicationContext(),MenuActivity.class);
+                        intnt.putExtra("username",user.getText().toString());
+                        startActivity(intnt);
+                    } else {
+                        Snackbar.make(view, "Usuário ou senha incorretos.", Snackbar.LENGTH_LONG).show();
+                    }
+                }else{
+                    Snackbar.make(view, "Insira o usuário e a senha para entrar!", Snackbar.LENGTH_LONG).show();
+                }
+
+            }
+        });
     }
 
     @Override
@@ -54,17 +80,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+    public void onBackPressed() {
+        android.os.Process.killProcess(android.os.Process.myPid());
+        System.exit(1);
     }
 }
