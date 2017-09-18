@@ -1,5 +1,6 @@
 package com.example.paulomag.ado5;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setItemIconTintList(null);
     }
 
     @Override
@@ -65,15 +67,28 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Intent menuIntent = new Intent();
 
         switch(id) {
-            case R.id.nav_camera: break;
-            case R.id.nav_gallery: break;
-            case R.id.nav_slideshow: break;
-            case R.id.nav_manage: break;
-            case R.id.nav_putaquepariu: break;
+            case R.id.nav_blackwindow:
+                menuIntent.setClass(this.getApplicationContext(),blackActivity.class);
+                break;
+            case R.id.nav_bluewindow:
+                menuIntent.setClass(this.getApplicationContext(),blueActivity.class);
+                break;
+            case R.id.nav_greenwindow:
+                menuIntent.setClass(this.getApplicationContext(),greenActivity.class);
+                break;
+            case R.id.nav_orangewindow:
+                menuIntent.setClass(this.getApplicationContext(),orangeActivity.class);
+                break;
+            case R.id.nav_whitewindow:
+                menuIntent.setClass(this.getApplicationContext(),whiteActivity.class);
+                break;
             default: break;
         }
+
+        startActivity(menuIntent);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

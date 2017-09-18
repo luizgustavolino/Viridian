@@ -3,25 +3,25 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_putaquepariu"
-            android:icon="@drawable/ic_menu_share"
-            android:title="PUTAQUEPARIU" />
+            android:id="@+id/nav_bluewindow"
+            android:icon="@drawable/ic_menu_blue"
+            android:title="Tela Azul"/>
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_blackwindow"
+            android:icon="@drawable/ic_menu_black"
+            android:title="Tela Preta" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/nav_greenwindow"
+            android:icon="@drawable/ic_menu_green"
+            android:title="Tela Verde" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_orangewindow"
+            android:icon="@drawable/ic_menu_orange"
+            android:title="Tela Laranja" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_whitewindow"
+            android:icon="@drawable/ic_menu_white"
+            android:title="Tela Branca" />
     </group>
 
 </menu>

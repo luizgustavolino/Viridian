@@ -19,6 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".blueActivity" />
+        <activity android:name=".blackActivity" />
+        <activity android:name=".greenActivity" />
+        <activity android:name=".orangeActivity" />
+        <activity android:name=".whiteActivity"></activity>
     </application>
 
 </manifest>
