@@ -2,5 +2,11 @@
 <resources>
     <color name="colorPrimary">#234d6e</color>
     <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#537d9e</color>
+
+    <color name="telaPreta">#051020</color>
+    <color name="telaAzul">#4040C0</color>
+    <color name="telaLaranja">#FF6900</color>
+    <color name="telaVerde">#20D020</color>
+    <color name="telaBranca">#d0d0d0</color>
 </resources>

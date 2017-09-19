@@ -5,23 +5,23 @@
         <item
             android:id="@+id/nav_bluewindow"
             android:icon="@drawable/ic_menu_blue"
-            android:title="Tela Azul"/>
+            android:title="@string/blueScreen"/>
         <item
             android:id="@+id/nav_blackwindow"
             android:icon="@drawable/ic_menu_black"
-            android:title="Tela Preta" />
+            android:title="@string/blackScreen" />
         <item
             android:id="@+id/nav_greenwindow"
             android:icon="@drawable/ic_menu_green"
-            android:title="Tela Verde" />
+            android:title="@string/greenScreen" />
         <item
             android:id="@+id/nav_orangewindow"
             android:icon="@drawable/ic_menu_orange"
-            android:title="Tela Laranja" />
+            android:title="@string/orangeScreen" />
         <item
             android:id="@+id/nav_whitewindow"
             android:icon="@drawable/ic_menu_white"
-            android:title="Tela Branca" />
+            android:title="@string/whiteScreen" />
     </group>
 
 </menu>

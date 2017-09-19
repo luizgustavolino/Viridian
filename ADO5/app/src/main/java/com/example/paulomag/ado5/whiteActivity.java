@@ -1,7 +1,9 @@
 package com.example.paulomag.ado5;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 public class whiteActivity extends AppCompatActivity {
 
@@ -9,5 +11,20 @@ public class whiteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_white);
+
+        getSupportActionBar().setTitle("Tela Branca");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent intnt = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intnt);
+
+        return true;
+    }
+
+
+    @Override
+    public void onBackPressed() {
     }
 }
