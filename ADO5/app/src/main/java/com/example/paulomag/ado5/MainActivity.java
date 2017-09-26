@@ -14,6 +14,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+
+import android.support.v7.app.NotificationCompat;
+import android.support.v7.app.NotificationCompat.Builder;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.app.IntentService;
+import android.support.v4.app.TaskStackBuilder;
+import  	android.app.NotificationManager;
+import android.app.Activity;
+import android.graphics.drawable.Drawable;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -33,6 +45,9 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
+
+        this.createNotifications();
+
     }
 
     @Override
@@ -94,4 +109,42 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    private void createNotification(int id , Class<?> cls, String icon, String title, String textContent) {
+
+        int drawableResourceId = this.getResources().getIdentifier(icon, "drawable", this.getPackageName());
+
+        NotificationCompat.Builder mBuilder = (android.support.v7.app.NotificationCompat.Builder)
+                new NotificationCompat.Builder(this)
+                        .setSmallIcon(drawableResourceId)
+                        .setContentTitle(title)
+                        .setContentText(textContent);
+// Creates an explicit intent for an Activity in your app
+        Intent resultIntent = new Intent(this, cls);
+
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+// Adds the back stack for the Intent (but not the Intent itself)
+        stackBuilder.addParentStack(cls);
+// Adds the Intent that starts the Activity to the top of the stack
+        stackBuilder.addNextIntent(resultIntent);
+        PendingIntent resultPendingIntent =
+                stackBuilder.getPendingIntent(
+                        0,
+                        PendingIntent.FLAG_UPDATE_CURRENT
+                );
+        mBuilder.setContentIntent(resultPendingIntent);
+        NotificationManager mNotificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+// mId allows you to update the notification later on.
+        mNotificationManager.notify(id, mBuilder.build());
+    }
+
+    private void createNotifications() {
+        this.createNotification(0,blueActivity.class, "ic_menu_blue", "titulo azul", "texto azul" );
+        this.createNotification(1,blackActivity.class, "ic_menu_black", "titulo preto", "texto preto" );
+        this.createNotification(2,greenActivity.class, "ic_menu_green", "titulo verde", "texto verde" );
+        this.createNotification(3,orangeActivity.class, "ic_menu_orange", "titulo laranja", "texto laranja" );
+        this.createNotification(4,whiteActivity.class, "ic_menu_white", "titulo branco", "texto branco" );
+    }
+
 }
