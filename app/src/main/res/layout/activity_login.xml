@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.gabriellsilv16.ado09.LoginActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/logo_senac"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="42dp"
+                android:scaleType="fitXY"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/senaclogo"
+                android:contentDescription="@string/logo_descriptor" />
+
+            <EditText
+                android:id="@+id/text_username"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="42dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="@string/username"
+                app:layout_constraintHorizontal_bias="0.652"
+                app:layout_constraintLeft_toLeftOf="@+id/logo_senac"
+                app:layout_constraintRight_toRightOf="@+id/logo_senac"
+                app:layout_constraintTop_toBottomOf="@+id/logo_senac" />
+
+            <EditText
+                android:id="@+id/text_password"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:hint="@string/password"
+                app:layout_constraintHorizontal_bias="0.652"
+                app:layout_constraintLeft_toLeftOf="@+id/logo_senac"
+                app:layout_constraintRight_toRightOf="@+id/logo_senac"
+                app:layout_constraintTop_toBottomOf="@+id/text_username" />
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="200dp"
+                android:layout_height="51dp"
+                android:layout_marginTop="42dp"
+                android:text="@string/login"
+                android:onClick="openMap"
+                app:layout_constraintLeft_toLeftOf="@+id/logo_senac"
+                app:layout_constraintRight_toRightOf="@+id/logo_senac"
+                app:layout_constraintTop_toBottomOf="@+id/text_password" />
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

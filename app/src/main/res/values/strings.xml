@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ADO 09</string>
+    <string name="login">Entrar</string>
+    <string name="password">Senha</string>
+    <string name="username">Nome de usuário</string>
+    <string name="logo_descriptor">Logo do Senac</string>
+</resources>
